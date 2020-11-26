@@ -20,7 +20,7 @@ class tpd(object):
             proposal = tpd(miModMx)
             e = 0.
             for xval,prob in zip(self.list_pcts,self.list_probs):
-                e+=abs(proposal.cdf(xval) - prob)
+                e+=(proposal.cdf(xval) - prob)**2
             return e
         return minimize( error, np.array(self.list_pcts).reshape(-1,) )
 
@@ -60,8 +60,10 @@ class tpd(object):
 
 if __name__ == "__main__":
 
-
-    TPD = tpd( list_pcts = [20,40,80] )
+    TPD_withParams = tpd( list_minModMax = [10,50,90] )
+    
+    TPD_estimate = tpd( list_pcts = [18.95,50,81] )
+    
     
 
     
