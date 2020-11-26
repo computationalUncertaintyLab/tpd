@@ -60,10 +60,11 @@ class tpd(object):
 
 if __name__ == "__main__":
 
-    TPD_withParams = tpd( list_minModMax = [10,50,90] )
+    TPD_withParams = tpd( list_minModMax = [10,50,90] ) # true params
     
-    TPD_estimate = tpd( list_pcts = [18.95,50,81] )
-    
+    TPD_estimate = tpd( list_pcts = [18.95,50,81] )     # estimated from percentiles
+    mi,mod,mx = TPD_estimate.mi,TPD_estimate.mod,TPD_estimate.mx,
+    print("Min,Mode,Max = {:.3f},{:.3f},{:.3f}".format(mi,mod,mx) )
     
 
     
